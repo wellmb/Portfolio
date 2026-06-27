@@ -12,14 +12,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span></div>
 
     <header class="header" id="top">
       <div class="header__inner container">
@@ -29,8 +30,8 @@
         </a>
 
         <nav class="header__nav" aria-label="Main navigation">
-          <a href="#work" class="header__link" data-i18n="nav.work">Work</a>
-          <a href="#skills" class="header__link" data-i18n="nav.skills">Stack</a>
+          <a href="#sites" class="header__link" data-i18n="nav.work">Work</a>
+          <a href="#stack" class="header__link" data-i18n="nav.skills">Stack</a>
           <a href="#contact" class="header__link" data-i18n="nav.contact">Contact</a>
         </nav>
 
@@ -53,29 +54,44 @@
       <!-- Hero -->
       <section class="hero" id="hero">
         <div class="hero__bg" aria-hidden="true">
-          <div class="hero__orb hero__orb--yellow"></div>
-          <div class="hero__orb hero__orb--red"></div>
+          <div class="hero__orb hero__orb--light"></div>
+          <div class="hero__orb hero__orb--shade"></div>
           <div class="hero__grid"></div>
         </div>
 
         <div class="hero__inner container">
-          <p class="hero__badge" data-i18n="hero.badge">Web · Telegram · Backend</p>
+          <p class="hero__status">
+            <span class="hero__status-bracket" aria-hidden="true">[</span>
+            <span class="hero__status-dot" aria-hidden="true"></span>
+            <span class="hero__status-bracket" aria-hidden="true">]</span>
+            <span data-i18n="hero.badge">available for new projects</span>
+          </p>
 
           <h1 class="hero__title">
             <span class="hero__title-line hero__title-line--brand">
-              <span class="hero__word" data-i18n="hero.title.line1">We11</span>
+              <span class="hero__words" data-i18n="hero.title.line1" data-i18n-split="words">We11</span>
             </span>
             <span class="hero__title-line hero__title-line--accent">
-              <span class="hero__word" data-i18n="hero.title.line2">Ship fast.</span>
+              <span class="hero__words" data-i18n="hero.title.line2" data-i18n-split="words">Ship fast.</span>
             </span>
             <span class="hero__title-line">
-              <span class="hero__word" data-i18n="hero.title.line3">Build real products.</span>
+              <span class="hero__words" data-i18n="hero.title.line3" data-i18n-split="words">Build real products.</span>
             </span>
           </h1>
 
           <p class="hero__subtitle" data-i18n="hero.subtitle">
             I build Telegram bots, landing pages, and backend services — from MVP to production on VPS.
           </p>
+
+          <div class="hero__facts" aria-label="Project stats">
+            <p class="hero__facts-line">
+              <span class="hero__facts-prompt" aria-hidden="true">$</span>
+              <span data-i18n="hero.facts.cmd">projects --shipped</span>
+            </p>
+            <p class="hero__facts-line hero__facts-line--output" data-i18n="hero.facts.output">
+              6 production deployments · 1 open-source tool
+            </p>
+          </div>
 
           <div class="hero__actions">
             <a
@@ -87,7 +103,7 @@
             >
               Message on Telegram
             </a>
-            <a href="#work" class="btn btn--ghost magnetic" data-i18n="hero.cta.secondary">
+            <a href="#sites" class="btn btn--ghost magnetic" data-i18n="hero.cta.secondary">
               View work
             </a>
           </div>
@@ -99,209 +115,390 @@
         </div>
       </section>
 
-      <!-- Projects -->
-      <section class="projects section" id="work">
+      <!-- Websites -->
+      <section class="section section-reveal" id="sites">
         <div class="container">
-          <header class="section-header reveal">
-            <p class="section-label" data-i18n="projects.label">Portfolio</p>
-            <h2 class="section-title" data-i18n="projects.title">Selected work</h2>
-            <p class="section-subtitle" data-i18n="projects.subtitle">
-              Three tracks — bots, sites, and apps.
+          <header class="section-header">
+            <p class="section-label" data-i18n="sites.label">Websites</p>
+            <h2 class="section-title" data-i18n="sites.title">Landing pages that convert</h2>
+            <p class="section-subtitle" data-i18n="sites.subtitle">
+              SEO-driven landings and multi-city structures — built for traffic and leads.
             </p>
           </header>
 
-          <div class="tabs reveal" role="tablist" aria-label="Project categories">
-            <button
-              type="button"
-              class="tabs__btn tabs__btn--active"
-              role="tab"
-              id="tab-bots"
-              aria-selected="true"
-              aria-controls="panel-bots"
-              data-tab="bots"
-            >
-              <span data-i18n="tabs.bots">Telegram Bots</span>
-            </button>
-            <button
-              type="button"
-              class="tabs__btn"
-              role="tab"
-              id="tab-sites"
-              aria-selected="false"
-              aria-controls="panel-sites"
-              data-tab="sites"
-            >
-              <span data-i18n="tabs.sites">Websites</span>
-            </button>
-            <button
-              type="button"
-              class="tabs__btn tabs__btn--wip"
-              role="tab"
-              id="tab-apps"
-              aria-selected="false"
-              aria-controls="panel-apps"
-              data-tab="apps"
-            >
-              <span data-i18n="tabs.apps">Applications</span>
-              <span class="tabs__badge" data-i18n="tabs.apps.badge">in progress</span>
-            </button>
-          </div>
-
-          <div class="panels">
-            <!-- Telegram Bots -->
-            <div
-              class="panel panel--active"
-              id="panel-bots"
-              role="tabpanel"
-              aria-labelledby="tab-bots"
-              data-panel="bots"
-            >
-              <div class="cards">
-                <article class="card card--featured reveal">
-                  <div class="card__glow" aria-hidden="true"></div>
-                  <div class="card__top">
-                    <span class="card__tag" data-i18n="bots.ruincoach.tag">Dota 2 · Analytics</span>
-                    <span class="card__badge card__badge--flagship">Flagship</span>
-                  </div>
-                  <h3 class="card__title" data-i18n="bots.ruincoach.title">RuinCoach</h3>
-                  <p class="card__desc" data-i18n="bots.ruincoach.desc">
-                    Dota 2 match and draft analysis bot.
-                  </p>
-                  <ul class="card__stats">
-                    <li data-i18n="bots.ruincoach.stat1">3400+ lines of Python</li>
-                    <li data-i18n="bots.ruincoach.stat2">YooKassa · promo codes</li>
-                  </ul>
-                  <div class="card__visual card__visual--ruincoach" aria-hidden="true">
-                    <div class="card__code-block">
-                      <span></span><span></span><span></span>
-                      <code>ruincoach · aiogram · asyncio</code>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="card reveal">
-                  <div class="card__top">
-                    <span class="card__tag" data-i18n="bots.solpath.tag">Crypto · Alerts</span>
-                  </div>
-                  <h3 class="card__title" data-i18n="bots.solpath.title">SolPath</h3>
-                  <p class="card__desc" data-i18n="bots.solpath.desc">
-                    Whale wallet tracker for Solana.
-                  </p>
-                  <div class="card__visual card__visual--solpath" aria-hidden="true">
-                    <div class="alert-preview">
-                      <div class="alert-preview__row">
-                        <span class="alert-preview__dot"></span>
-                        <span>WHALE SWAP · 847 SOL</span>
-                      </div>
-                      <div class="alert-preview__row alert-preview__row--muted">
-                        <span class="alert-preview__dot alert-preview__dot--red"></span>
-                        <span>JUP → USDC · 2m ago</span>
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    href="https://t.me/SolPath_bot"
-                    class="card__link magnetic"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-i18n="bots.solpath.link"
-                  >
-                    Open @SolPath_bot
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path
-                        d="M7 17L17 7M17 7H7M17 7V17"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </a>
-                </article>
-
-                <article class="card reveal">
-                  <div class="card__top">
-                    <span class="card__tag" data-i18n="bots.welltalk.tag">EdTech · AI</span>
-                  </div>
-                  <h3 class="card__title" data-i18n="bots.welltalk.title">WellTalk</h3>
-                  <p class="card__desc" data-i18n="bots.welltalk.desc">
-                    English learning bot powered by DeepSeek API.
-                  </p>
-                  <div class="card__visual card__visual--welltalk" aria-hidden="true">
-                    <div class="chat-preview">
-                      <div class="chat-preview__bubble chat-preview__bubble--bot">
-                        Let's practice phrasal verbs today.
-                      </div>
-                      <div class="chat-preview__bubble chat-preview__bubble--user">
-                        Sounds good — hit me!
-                      </div>
-                    </div>
-                  </div>
-                  <span class="card__link card__link--muted" data-i18n="bots.welltalk.link">
-                    Public launch coming soon
-                  </span>
-                </article>
+          <div class="cards">
+            <article class="card card--tilt">
+              <span class="card__index" aria-hidden="true">01</span>
+              <div class="card__top">
+                <span class="card__tag" data-i18n="sites.fastcourier.tag">Logistics · SEO</span>
               </div>
-            </div>
-
-            <!-- Websites placeholder (phase 2) -->
-            <div
-              class="panel"
-              id="panel-sites"
-              role="tabpanel"
-              aria-labelledby="tab-sites"
-              data-panel="sites"
-              hidden
-            >
-              <div class="placeholder reveal">
-                <div class="placeholder__icon" aria-hidden="true">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <rect
-                      x="3"
-                      y="4"
-                      width="18"
-                      height="14"
-                      rx="2"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <path d="M3 9H21" stroke="currentColor" stroke-width="1.5" />
-                  </svg>
+              <h3 class="card__title" data-i18n="sites.fastcourier.title">fastcourier.pro</h3>
+              <p class="card__desc" data-i18n="sites.fastcourier.desc">
+                Courier job matching landing with partner integrations and city-specific SEO pages across Russia.
+              </p>
+              <div class="card__visual card__visual--site" aria-hidden="true">
+                <div class="site-preview">
+                  <div class="site-preview__bar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="site-preview__cities">
+                    <span>Москва</span>
+                    <span>СПб</span>
+                    <span>Казань</span>
+                  </div>
                 </div>
-                <h3 class="placeholder__title" data-i18n="placeholder.sites.title">
-                  Websites — coming next
-                </h3>
-                <p class="placeholder__desc" data-i18n="placeholder.sites.desc">
-                  Cards will be added in the next iteration.
-                </p>
               </div>
-            </div>
+              <a
+                href="https://fastcourier.pro"
+                class="card__link magnetic"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="sites.view"
+              >
+                View
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </article>
 
-            <!-- Apps placeholder -->
-            <div
-              class="panel"
-              id="panel-apps"
-              role="tabpanel"
-              aria-labelledby="tab-apps"
-              data-panel="apps"
-              hidden
-            >
-              <div class="placeholder placeholder--wip reveal">
-                <span class="placeholder__badge" data-i18n="placeholder.apps.badge">Coming soon</span>
-                <h3 class="placeholder__title" data-i18n="placeholder.apps.title">
-                  Applications — in development
-                </h3>
-                <p class="placeholder__desc" data-i18n="placeholder.apps.desc">
-                  This section is actively in progress.
-                </p>
+            <article class="card card--tilt">
+              <span class="card__index" aria-hidden="true">02</span>
+              <div class="card__top">
+                <span class="card__tag" data-i18n="sites.detailing.tag">Premium · Multi-city</span>
               </div>
-            </div>
+              <h3 class="card__title" data-i18n="sites.detailing.title">We11 Detailing</h3>
+              <p class="card__desc" data-i18n="sites.detailing.desc">
+                Premium detailing studio landing with before/after gallery, online booking, and Moscow/Dubai structure.
+              </p>
+              <div class="card__visual card__visual--site" aria-hidden="true">
+                <div class="site-preview site-preview--detailing">
+                  <div class="site-preview__split">
+                    <span class="site-preview__half site-preview__half--before">Before</span>
+                    <span class="site-preview__half site-preview__half--after">After</span>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://wellmb.github.io/Detailing_We11/"
+                class="card__link magnetic"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="sites.view"
+              >
+                View
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </article>
+
+            <article class="card card--tilt">
+              <span class="card__index" aria-hidden="true">03</span>
+              <div class="card__top">
+                <span class="card__tag" data-i18n="sites.infobiz.tag">EDM · Infoproduct</span>
+              </div>
+              <h3 class="card__title" data-i18n="sites.infobiz.title">Infobiz landing</h3>
+              <p class="card__desc" data-i18n="sites.infobiz.desc">
+                High-conversion landing for an electronic music infoproduct — bold visuals and focused sales flow.
+              </p>
+              <div class="card__visual card__visual--site" aria-hidden="true">
+                <div class="site-preview site-preview--infobiz">
+                  <div class="site-preview__wave"></div>
+                  <span class="site-preview__label">EDM</span>
+                </div>
+              </div>
+              <a
+                href="https://wellmb.github.io/Infobiz/landing.html"
+                class="card__link magnetic"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="sites.view"
+              >
+                View
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Skills stub for nav anchor -->
-      <section class="skills section" id="skills" aria-hidden="true"></section>
+      <!-- Telegram Bots -->
+      <section class="section section-reveal" id="bots">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-label" data-i18n="bots.label">Telegram Bots</p>
+            <h2 class="section-title" data-i18n="bots.title">Bots that ship and scale</h2>
+            <p class="section-subtitle" data-i18n="bots.subtitle">
+              From analytics tools to payment-ready products — real backends, not chat demos.
+            </p>
+          </header>
+
+          <div class="cards">
+            <article class="card card--featured card--tilt">
+              <span class="card__index" aria-hidden="true">01</span>
+              <div class="card__glow" aria-hidden="true"></div>
+              <div class="card__content">
+                <div class="card__top">
+                  <span class="card__tag" data-i18n="bots.ruincoach.tag">Dota 2 · Analytics</span>
+                  <span class="card__badge card__badge--flagship">Flagship</span>
+                </div>
+                <h3 class="card__title" data-i18n="bots.ruincoach.title">RuinCoach</h3>
+                <p class="card__desc" data-i18n="bots.ruincoach.desc">
+                  Dota 2 match and draft analysis bot.
+                </p>
+                <ul class="card__stats">
+                  <li data-i18n="bots.ruincoach.stat1">3400+ lines of Python</li>
+                  <li data-i18n="bots.ruincoach.stat2">YooKassa · promo codes</li>
+                </ul>
+              </div>
+              <div class="card__visual card__visual--ruincoach" aria-hidden="true">
+                <div class="card__code-block">
+                  <span></span><span></span><span></span>
+                  <code>ruincoach · aiogram · asyncio</code>
+                </div>
+              </div>
+            </article>
+
+            <article class="card card--tilt">
+              <span class="card__index" aria-hidden="true">02</span>
+              <div class="card__top">
+                <span class="card__tag" data-i18n="bots.solpath.tag">Crypto · Alerts</span>
+              </div>
+              <h3 class="card__title" data-i18n="bots.solpath.title">SolPath</h3>
+              <p class="card__desc" data-i18n="bots.solpath.desc">
+                Whale wallet tracker for Solana.
+              </p>
+              <div class="card__visual card__visual--solpath" aria-hidden="true">
+                <div class="alert-preview">
+                  <div class="alert-preview__row">
+                    <span class="alert-preview__dot"></span>
+                    <span>WHALE SWAP · 847 SOL</span>
+                  </div>
+                  <div class="alert-preview__row alert-preview__row--muted">
+                    <span class="alert-preview__dot alert-preview__dot--red"></span>
+                    <span>JUP → USDC · 2m ago</span>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://t.me/SolPath_bot"
+                class="card__link magnetic"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="bots.solpath.link"
+              >
+                Open @SolPath_bot
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </article>
+
+            <article class="card card--tilt">
+              <span class="card__index" aria-hidden="true">03</span>
+              <div class="card__top">
+                <span class="card__tag" data-i18n="bots.welltalk.tag">EdTech · AI</span>
+              </div>
+              <h3 class="card__title" data-i18n="bots.welltalk.title">WellTalk</h3>
+              <p class="card__desc" data-i18n="bots.welltalk.desc">
+                English learning bot powered by DeepSeek API.
+              </p>
+              <div class="card__visual card__visual--welltalk" aria-hidden="true">
+                <div class="chat-preview">
+                  <div class="chat-preview__bubble chat-preview__bubble--bot">
+                    Let's practice phrasal verbs today.
+                  </div>
+                  <div class="chat-preview__bubble chat-preview__bubble--user">
+                    Sounds good — hit me!
+                  </div>
+                </div>
+              </div>
+              <span class="card__link card__link--muted" data-i18n="bots.welltalk.link">
+                Public launch coming soon
+              </span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open Source -->
+      <section class="section section-reveal" id="opensource">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-label" data-i18n="oss.label">Open Source</p>
+            <h2 class="section-title" data-i18n="oss.title">Tools for developers</h2>
+            <p class="section-subtitle" data-i18n="oss.subtitle">
+              Infrastructure and deployment utilities — built for my own workflow, shared with the community.
+            </p>
+          </header>
+
+          <div class="cards cards--single">
+            <article class="card card--oss">
+              <div class="card__top">
+                <span class="card__badge card__badge--oss" data-i18n="oss.dploy.badge">Open Source</span>
+                <span class="card__badge card__badge--license">MIT</span>
+              </div>
+              <h3 class="card__title" data-i18n="oss.dploy.title">DPLoy</h3>
+              <p class="card__desc" data-i18n="oss.dploy.desc">
+                MCP server for VPS deployment via SSH in natural language.
+              </p>
+              <ul class="card__stats card__stats--mono">
+                <li>systemd</li>
+                <li>nginx + SSL</li>
+                <li>docker-compose</li>
+                <li>Claude Code · Cursor</li>
+              </ul>
+              <div class="card__visual card__visual--oss" aria-hidden="true">
+                <div class="terminal-preview">
+                  <div class="terminal-preview__line">
+                    <span class="terminal-preview__prompt">$</span>
+                    <span data-i18n="oss.dploy.terminal">deploy my bot to VPS with SSL</span>
+                  </div>
+                  <div class="terminal-preview__line terminal-preview__line--success">
+                    ✓ systemd service active
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://github.com/wellmb/DPLoy"
+                class="card__link magnetic"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="oss.dploy.link"
+              >
+                View on GitHub
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stack -->
+      <section class="section section-reveal" id="stack">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-label" data-i18n="skills.label">Stack</p>
+            <h2 class="section-title" data-i18n="skills.title">Technologies I work with</h2>
+            <p class="section-subtitle" data-i18n="skills.subtitle">
+              Production-focused toolchain — from bot frameworks to VPS deployment.
+            </p>
+          </header>
+
+          <ul class="skills-grid">
+            <li class="skill-item">
+              <svg class="skill-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 2L3 7V17L12 22L21 17V7L12 2Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Python</span>
+            </li>
+            <li class="skill-item">
+              <svg class="skill-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5" />
+                <path d="M8 12H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+              <span>aiogram</span>
+            </li>
+            <li class="skill-item">
+              <svg class="skill-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path d="M12 12L16 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+              <span>asyncio</span>
+            </li>
+            <li class="skill-item">
+              <svg class="skill-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M8 6L16 12L8 18V6Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>TypeScript / Node.js</span>
+            </li>
+            <li class="skill-item">
+              <svg class="skill-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5" />
+                <path d="M7 10H17M7 14H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+              <span>Docker</span>
+            </li>
+            <li class="skill-item">
+              <svg class="skill-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5" />
+                <path d="M12 8V12L14.5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+              <span>systemd</span>
+            </li>
+            <li class="skill-item">
+              <svg class="skill-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <ellipse cx="12" cy="6" rx="7" ry="3" stroke="currentColor" stroke-width="1.5" />
+                <path
+                  d="M5 6V18C5 19.66 8.13 21 12 21C15.87 21 19 19.66 19 18V6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+              <span>SQLite</span>
+            </li>
+            <li class="skill-item">
+              <svg class="skill-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+                <rect x="3" y="14" width="18" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+                <circle cx="7" cy="7" r="1" fill="currentColor" />
+                <circle cx="7" cy="17" r="1" fill="currentColor" />
+              </svg>
+              <span>VPS deployment</span>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <footer class="footer" id="contact">
@@ -331,6 +528,9 @@
             Get in touch
           </a>
         </div>
+        <p class="footer__system" data-i18n="footer.system">
+          [ system ] we11.dev · uptime: production-ready
+        </p>
         <p class="footer__copy" data-i18n="footer.copy">© 2026 We11. All rights reserved.</p>
       </div>
     </footer>

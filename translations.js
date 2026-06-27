@@ -3,7 +3,9 @@ const translations = {
     'nav.work': 'Работы',
     'nav.skills': 'Стек',
     'nav.contact': 'Контакт',
-    'hero.badge': 'Веб · Telegram · Backend',
+    'hero.badge': 'открыт для новых проектов',
+    'hero.facts.cmd': 'projects --shipped',
+    'hero.facts.output': '6 продакшен-деплоев · 1 open-source инструмент',
     'hero.title.line1': 'We11',
     'hero.title.line2': 'Ship fast.',
     'hero.title.line3': 'Build real products.',
@@ -12,14 +14,27 @@ const translations = {
     'hero.cta.primary': 'Написать в Telegram',
     'hero.cta.secondary': 'Смотреть работы',
     'hero.scroll': 'Scroll',
-    'projects.label': 'Портфолио',
-    'projects.title': 'Избранные проекты',
-    'projects.subtitle':
-      'Три направления — боты, сайты и приложения. Переключайте категории, чтобы увидеть релевантные кейсы.',
-    'tabs.bots': 'Telegram-боты',
-    'tabs.sites': 'Сайты',
-    'tabs.apps': 'Приложения',
-    'tabs.apps.badge': 'в разработке',
+    'sites.label': 'Сайты',
+    'sites.title': 'Лендинги, которые конвертируют',
+    'sites.subtitle':
+      'SEO-ориентированные страницы и мультигородовая структура — заточено под трафик и заявки.',
+    'sites.view': 'Посмотреть',
+    'sites.fastcourier.tag': 'Логистика · SEO',
+    'sites.fastcourier.title': 'fastcourier.pro',
+    'sites.fastcourier.desc':
+      'Лендинг для подбора курьерской работы с партнёрскими интеграциями (Яндекс Еда, Купер, Самокат) и отдельными SEO-страницами под города России.',
+    'sites.detailing.tag': 'Premium · Multi-city',
+    'sites.detailing.title': 'We11 Detailing',
+    'sites.detailing.desc':
+      'Премиальный лендинг для детейлинг-студии: галерея до/после, форма онлайн-записи и двухгородовая структура (Москва / Дубай).',
+    'sites.infobiz.tag': 'EDM · Инфопродукт',
+    'sites.infobiz.title': 'Infobiz landing',
+    'sites.infobiz.desc':
+      'Лендинг для инфопродукта в нише EDM/электронной музыки — яркая визуальная подача и сфокусированный sales-flow.',
+    'bots.label': 'Telegram-боты',
+    'bots.title': 'Боты, которые работают в проде',
+    'bots.subtitle':
+      'От аналитики до платных продуктов — реальные backend-системы, а не чат-демо.',
     'bots.solpath.tag': 'Crypto · Alerts',
     'bots.solpath.title': 'SolPath',
     'bots.solpath.desc':
@@ -36,23 +51,33 @@ const translations = {
     'bots.welltalk.desc':
       'Бот для изучения английского на базе DeepSeek API — персонализированные диалоги, упражнения и обратная связь в привычном Telegram-интерфейсе.',
     'bots.welltalk.link': 'Скоро в открытом доступе',
-    'placeholder.sites.title': 'Сайты — скоро',
-    'placeholder.sites.desc':
-      'Карточки fastcourier.pro, We11 Detailing, Infobiz landing и DPLoy будут добавлены на следующем этапе.',
-    'placeholder.apps.title': 'Приложения — в разработке',
-    'placeholder.apps.desc':
-      'Раздел в активной работе. Скоро здесь появится первый релиз — следите за обновлениями в Telegram.',
-    'placeholder.apps.badge': 'Coming soon',
+    'oss.label': 'Open Source',
+    'oss.title': 'Инструменты для разработчиков',
+    'oss.subtitle':
+      'Инфраструктура и утилиты для деплоя — сначала для своего workflow, потом для сообщества.',
+    'oss.dploy.badge': 'Open Source',
+    'oss.dploy.title': 'DPLoy',
+    'oss.dploy.desc':
+      'MCP-сервер для деплоя на VPS через SSH на естественном языке. Python-боты как systemd-сервисы, nginx + SSL, docker-compose — для Claude Code, Cursor и Codex.',
+    'oss.dploy.terminal': 'deploy my bot to VPS with SSL',
+    'oss.dploy.link': 'Смотреть на GitHub',
+    'skills.label': 'Стек',
+    'skills.title': 'Технологии, с которыми работаю',
+    'skills.subtitle':
+      'Production-ориентированный набор — от фреймворков для ботов до деплоя на VPS.',
     'footer.tagline': 'Готов обсудить ваш проект',
     'footer.telegram': 'Telegram-канал',
     'footer.contact': 'Связаться',
+    'footer.system': '[ system ] we11.dev · статус: production-ready',
     'footer.copy': '© 2026 We11. Все права защищены.',
   },
   en: {
     'nav.work': 'Work',
     'nav.skills': 'Stack',
     'nav.contact': 'Contact',
-    'hero.badge': 'Web · Telegram · Backend',
+    'hero.badge': 'available for new projects',
+    'hero.facts.cmd': 'projects --shipped',
+    'hero.facts.output': '6 production deployments · 1 open-source tool',
     'hero.title.line1': 'We11',
     'hero.title.line2': 'Ship fast.',
     'hero.title.line3': 'Build real products.',
@@ -61,14 +86,27 @@ const translations = {
     'hero.cta.primary': 'Message on Telegram',
     'hero.cta.secondary': 'View work',
     'hero.scroll': 'Scroll',
-    'projects.label': 'Portfolio',
-    'projects.title': 'Selected work',
-    'projects.subtitle':
-      'Three tracks — bots, sites, and apps. Switch categories to explore relevant case studies.',
-    'tabs.bots': 'Telegram Bots',
-    'tabs.sites': 'Websites',
-    'tabs.apps': 'Applications',
-    'tabs.apps.badge': 'in progress',
+    'sites.label': 'Websites',
+    'sites.title': 'Landing pages that convert',
+    'sites.subtitle':
+      'SEO-driven landings and multi-city structures — built for traffic and leads.',
+    'sites.view': 'View',
+    'sites.fastcourier.tag': 'Logistics · SEO',
+    'sites.fastcourier.title': 'fastcourier.pro',
+    'sites.fastcourier.desc':
+      'Courier job matching landing with partner integrations (Yandex Eda, Kuper, Samokat) and city-specific SEO pages across Russia.',
+    'sites.detailing.tag': 'Premium · Multi-city',
+    'sites.detailing.title': 'We11 Detailing',
+    'sites.detailing.desc':
+      'Premium detailing studio landing with before/after gallery, online booking, and Moscow/Dubai structure.',
+    'sites.infobiz.tag': 'EDM · Infoproduct',
+    'sites.infobiz.title': 'Infobiz landing',
+    'sites.infobiz.desc':
+      'High-conversion landing for an electronic music infoproduct — bold visuals and focused sales flow.',
+    'bots.label': 'Telegram Bots',
+    'bots.title': 'Bots that ship and scale',
+    'bots.subtitle':
+      'From analytics tools to payment-ready products — real backends, not chat demos.',
     'bots.solpath.tag': 'Crypto · Alerts',
     'bots.solpath.title': 'SolPath',
     'bots.solpath.desc':
@@ -85,16 +123,24 @@ const translations = {
     'bots.welltalk.desc':
       'English learning bot powered by DeepSeek API — personalized dialogues, exercises, and feedback inside familiar Telegram UX.',
     'bots.welltalk.link': 'Public launch coming soon',
-    'placeholder.sites.title': 'Websites — coming next',
-    'placeholder.sites.desc':
-      'Cards for fastcourier.pro, We11 Detailing, Infobiz landing, and DPLoy will be added in the next iteration.',
-    'placeholder.apps.title': 'Applications — in development',
-    'placeholder.apps.desc':
-      'This section is actively in progress. First release landing here soon — follow updates on Telegram.',
-    'placeholder.apps.badge': 'Coming soon',
+    'oss.label': 'Open Source',
+    'oss.title': 'Tools for developers',
+    'oss.subtitle':
+      'Infrastructure and deployment utilities — built for my own workflow, shared with the community.',
+    'oss.dploy.badge': 'Open Source',
+    'oss.dploy.title': 'DPLoy',
+    'oss.dploy.desc':
+      'MCP server for VPS deployment via SSH in natural language. Python bots as systemd services, nginx + SSL, docker-compose — for Claude Code, Cursor, and Codex.',
+    'oss.dploy.terminal': 'deploy my bot to VPS with SSL',
+    'oss.dploy.link': 'View on GitHub',
+    'skills.label': 'Stack',
+    'skills.title': 'Technologies I work with',
+    'skills.subtitle':
+      'Production-focused toolchain — from bot frameworks to VPS deployment.',
     'footer.tagline': 'Open to new projects',
     'footer.telegram': 'Telegram channel',
     'footer.contact': 'Get in touch',
+    'footer.system': '[ system ] we11.dev · uptime: production-ready',
     'footer.copy': '© 2026 We11. All rights reserved.',
   },
 };
