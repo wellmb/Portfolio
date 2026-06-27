@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="We11 — Telegram bots, web development, backend. Ship fast, build real products."
+    />
+    <title>We11 — Web & Bot Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="header" id="top">
+      <div class="header__inner container">
+        <a href="#top" class="logo" aria-label="We11 home">
+          <span class="logo__mark">W</span>
+          <span class="logo__text">e11</span>
+        </a>
+
+        <nav class="header__nav" aria-label="Main navigation">
+          <a href="#work" class="header__link" data-i18n="nav.work">Work</a>
+          <a href="#skills" class="header__link" data-i18n="nav.skills">Stack</a>
+          <a href="#contact" class="header__link" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <div class="header__actions">
+          <button
+            type="button"
+            class="lang-switch"
+            id="langSwitch"
+            aria-label="Switch language"
+          >
+            <span class="lang-switch__option lang-switch__option--active" data-lang="en">EN</span>
+            <span class="lang-switch__divider">|</span>
+            <span class="lang-switch__option" data-lang="ru">RU</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero" id="hero">
+        <div class="hero__bg" aria-hidden="true">
+          <div class="hero__orb hero__orb--yellow"></div>
+          <div class="hero__orb hero__orb--red"></div>
+          <div class="hero__grid"></div>
+        </div>
+
+        <div class="hero__inner container">
+          <p class="hero__badge" data-i18n="hero.badge">Web · Telegram · Backend</p>
+
+          <h1 class="hero__title">
+            <span class="hero__title-line hero__title-line--brand">
+              <span class="hero__word" data-i18n="hero.title.line1">We11</span>
+            </span>
+            <span class="hero__title-line hero__title-line--accent">
+              <span class="hero__word" data-i18n="hero.title.line2">Ship fast.</span>
+            </span>
+            <span class="hero__title-line">
+              <span class="hero__word" data-i18n="hero.title.line3">Build real products.</span>
+            </span>
+          </h1>
+
+          <p class="hero__subtitle" data-i18n="hero.subtitle">
+            I build Telegram bots, landing pages, and backend services — from MVP to production on VPS.
+          </p>
+
+          <div class="hero__actions">
+            <a
+              href="https://t.me/We11_End"
+              class="btn btn--primary magnetic"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="hero.cta.primary"
+            >
+              Message on Telegram
+            </a>
+            <a href="#work" class="btn btn--ghost magnetic" data-i18n="hero.cta.secondary">
+              View work
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__scroll" aria-hidden="true">
+          <span data-i18n="hero.scroll">Scroll</span>
+          <span class="hero__scroll-line"></span>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="projects section" id="work">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="section-label" data-i18n="projects.label">Portfolio</p>
+            <h2 class="section-title" data-i18n="projects.title">Selected work</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">
+              Three tracks — bots, sites, and apps.
+            </p>
+          </header>
+
+          <div class="tabs reveal" role="tablist" aria-label="Project categories">
+            <button
+              type="button"
+              class="tabs__btn tabs__btn--active"
+              role="tab"
+              id="tab-bots"
+              aria-selected="true"
+              aria-controls="panel-bots"
+              data-tab="bots"
+            >
+              <span data-i18n="tabs.bots">Telegram Bots</span>
+            </button>
+            <button
+              type="button"
+              class="tabs__btn"
+              role="tab"
+              id="tab-sites"
+              aria-selected="false"
+              aria-controls="panel-sites"
+              data-tab="sites"
+            >
+              <span data-i18n="tabs.sites">Websites</span>
+            </button>
+            <button
+              type="button"
+              class="tabs__btn tabs__btn--wip"
+              role="tab"
+              id="tab-apps"
+              aria-selected="false"
+              aria-controls="panel-apps"
+              data-tab="apps"
+            >
+              <span data-i18n="tabs.apps">Applications</span>
+              <span class="tabs__badge" data-i18n="tabs.apps.badge">in progress</span>
+            </button>
+          </div>
+
+          <div class="panels">
+            <!-- Telegram Bots -->
+            <div
+              class="panel panel--active"
+              id="panel-bots"
+              role="tabpanel"
+              aria-labelledby="tab-bots"
+              data-panel="bots"
+            >
+              <div class="cards">
+                <article class="card card--featured reveal">
+                  <div class="card__glow" aria-hidden="true"></div>
+                  <div class="card__top">
+                    <span class="card__tag" data-i18n="bots.ruincoach.tag">Dota 2 · Analytics</span>
+                    <span class="card__badge card__badge--flagship">Flagship</span>
+                  </div>
+                  <h3 class="card__title" data-i18n="bots.ruincoach.title">RuinCoach</h3>
+                  <p class="card__desc" data-i18n="bots.ruincoach.desc">
+                    Dota 2 match and draft analysis bot.
+                  </p>
+                  <ul class="card__stats">
+                    <li data-i18n="bots.ruincoach.stat1">3400+ lines of Python</li>
+                    <li data-i18n="bots.ruincoach.stat2">YooKassa · promo codes</li>
+                  </ul>
+                  <div class="card__visual card__visual--ruincoach" aria-hidden="true">
+                    <div class="card__code-block">
+                      <span></span><span></span><span></span>
+                      <code>ruincoach · aiogram · asyncio</code>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="card reveal">
+                  <div class="card__top">
+                    <span class="card__tag" data-i18n="bots.solpath.tag">Crypto · Alerts</span>
+                  </div>
+                  <h3 class="card__title" data-i18n="bots.solpath.title">SolPath</h3>
+                  <p class="card__desc" data-i18n="bots.solpath.desc">
+                    Whale wallet tracker for Solana.
+                  </p>
+                  <div class="card__visual card__visual--solpath" aria-hidden="true">
+                    <div class="alert-preview">
+                      <div class="alert-preview__row">
+                        <span class="alert-preview__dot"></span>
+                        <span>WHALE SWAP · 847 SOL</span>
+                      </div>
+                      <div class="alert-preview__row alert-preview__row--muted">
+                        <span class="alert-preview__dot alert-preview__dot--red"></span>
+                        <span>JUP → USDC · 2m ago</span>
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    href="https://t.me/SolPath_bot"
+                    class="card__link magnetic"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-i18n="bots.solpath.link"
+                  >
+                    Open @SolPath_bot
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </article>
+
+                <article class="card reveal">
+                  <div class="card__top">
+                    <span class="card__tag" data-i18n="bots.welltalk.tag">EdTech · AI</span>
+                  </div>
+                  <h3 class="card__title" data-i18n="bots.welltalk.title">WellTalk</h3>
+                  <p class="card__desc" data-i18n="bots.welltalk.desc">
+                    English learning bot powered by DeepSeek API.
+                  </p>
+                  <div class="card__visual card__visual--welltalk" aria-hidden="true">
+                    <div class="chat-preview">
+                      <div class="chat-preview__bubble chat-preview__bubble--bot">
+                        Let's practice phrasal verbs today.
+                      </div>
+                      <div class="chat-preview__bubble chat-preview__bubble--user">
+                        Sounds good — hit me!
+                      </div>
+                    </div>
+                  </div>
+                  <span class="card__link card__link--muted" data-i18n="bots.welltalk.link">
+                    Public launch coming soon
+                  </span>
+                </article>
+              </div>
+            </div>
+
+            <!-- Websites placeholder (phase 2) -->
+            <div
+              class="panel"
+              id="panel-sites"
+              role="tabpanel"
+              aria-labelledby="tab-sites"
+              data-panel="sites"
+              hidden
+            >
+              <div class="placeholder reveal">
+                <div class="placeholder__icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="14"
+                      rx="2"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path d="M3 9H21" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </div>
+                <h3 class="placeholder__title" data-i18n="placeholder.sites.title">
+                  Websites — coming next
+                </h3>
+                <p class="placeholder__desc" data-i18n="placeholder.sites.desc">
+                  Cards will be added in the next iteration.
+                </p>
+              </div>
+            </div>
+
+            <!-- Apps placeholder -->
+            <div
+              class="panel"
+              id="panel-apps"
+              role="tabpanel"
+              aria-labelledby="tab-apps"
+              data-panel="apps"
+              hidden
+            >
+              <div class="placeholder placeholder--wip reveal">
+                <span class="placeholder__badge" data-i18n="placeholder.apps.badge">Coming soon</span>
+                <h3 class="placeholder__title" data-i18n="placeholder.apps.title">
+                  Applications — in development
+                </h3>
+                <p class="placeholder__desc" data-i18n="placeholder.apps.desc">
+                  This section is actively in progress.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills stub for nav anchor -->
+      <section class="skills section" id="skills" aria-hidden="true"></section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <span class="logo__mark logo__mark--sm">W</span>
+          <span class="logo__text">e11</span>
+        </div>
+        <p class="footer__tagline" data-i18n="footer.tagline">Open to new projects</p>
+        <div class="footer__links">
+          <a
+            href="https://t.me/We11_End"
+            class="footer__link magnetic"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="footer.telegram">Telegram channel</span>
+            <span class="footer__handle">@We11_End</span>
+          </a>
+          <a
+            href="https://t.me/We11_End"
+            class="footer__link magnetic"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="footer.contact"
+          >
+            Get in touch
+          </a>
+        </div>
+        <p class="footer__copy" data-i18n="footer.copy">© 2026 We11. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
